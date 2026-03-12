@@ -1,0 +1,269 @@
+@media (max-width: 1300px) {
+  :root {
+    --page-padding: 96px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .secao-interconexao__topo,
+  .secao-metas__conteudo {
+    gap: 48px;
+  }
+
+  .secao-interconexao__texto h2 {
+    font-size: 36px;
+  }
+
+  .secao-interconexao__texto p {
+    font-size: 15px;
+  }
+
+  .cartao-destaque__titulo {
+    font-size: 18px;
+  }
+
+  .cartao-destaque__texto p {
+    font-size: 16px;
+  }
+
+  .secao-metas__titulo h2 {
+    font-size: 44px;
+  }
+
+  .card-meta {
+    font-size: 14.5px;
+  }
+
+  .card-meta__imagem {
+    width: 78%;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-padding: 84px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .secao-interconexao__texto h2 {
+    font-size: 34px;
+  }
+
+  .secao-interconexao__texto p {
+    font-size: 14.5px;
+  }
+
+  .cartao-destaque__titulo {
+    font-size: 17px;
+  }
+
+  .cartao-destaque__texto p {
+    font-size: 15px;
+  }
+
+  .secao-metas__titulo h2 {
+    font-size: 42px;
+  }
+
+  .card-meta {
+    font-size: 14px;
+  }
+
+  .card-meta__imagem {
+    width: 76%;
+  }
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --page-padding: 72px;
+  }
+
+  .hero__image {
+    height: 380px;
+  }
+
+  .secao-interconexao__texto h2 {
+    font-size: 32px;
+  }
+
+  .secao-interconexao__texto p {
+    font-size: 14px;
+  }
+
+  .cartao-destaque__titulo {
+    font-size: 16px;
+  }
+
+  .cartao-destaque__texto p {
+    font-size: 14.5px;
+  }
+
+  .secao-descarbonizacao__imagem,
+  .secao-cadeia__imagem,
+  .secao-cadeia__video,
+  .secao-cadeia__video-thumb {
+    height: 230px;
+  }
+
+  .secao-metas__titulo h2 {
+    font-size: 40px;
+  }
+
+  .card-meta {
+    font-size: 13.5px;
+  }
+
+  .card-meta__imagem {
+    width: 74%;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --page-padding: 64px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .secao-metas__titulo h2 {
+    font-size: 38px;
+  }
+
+  .card-meta {
+    font-size: 13.5px;
+  }
+
+  .card-meta__imagem {
+    width: 72%;
+  }
+
+  .secao-descarbonizacao h2,
+  .secao-cadeia h2 {
+    font-size: 34px;
+  }
+
+  .secao-interconexao__texto h2 {
+    font-size: 30px;
+  }
+
+  .secao-interconexao__texto p {
+    font-size: 14px;
+  }
+
+  .cartao-destaque__titulo {
+    font-size: 16px;
+  }
+
+  .cartao-destaque__texto p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --page-padding: 56px;
+  }
+
+  .secao-interconexao__topo,
+  .secao-metas__conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao-destaque {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  :root {
+    --page-padding: 48px;
+  }
+
+  .secao-metas__cards,
+  .secao-descarbonizacao__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .secao-cadeia__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .secao-cadeia__menu {
+    order: 2;
+  }
+
+  .secao-reflorestamento__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .secao-reflorestamento__card-arr {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-padding: 40px;
+  }
+
+  .hero__image {
+    height: 340px;
+  }
+
+  .secao-metas__cards,
+  .secao-descarbonizacao__cards,
+  .secao-reflorestamento__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .secao-descarbonizacao__imagem,
+  .secao-cadeia__imagem,
+  .secao-cadeia__video,
+  .secao-cadeia__video-thumb {
+    height: 210px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --page-padding: 24px;
+  }
+
+  .hero__image {
+    height: 300px;
+  }
+
+  .secao-interconexao,
+  .secao-metas,
+  .secao-descarbonizacao,
+  .secao-cadeia,
+  .secao-reflorestamento,
+  .secao-referencias {
+    padding: 56px 0;
+  }
+
+  .secao-interconexao__texto h2,
+  .secao-metas__titulo h2,
+  .secao-descarbonizacao h2,
+  .secao-cadeia h2 {
+    font-size: 30px;
+  }
+
+  .secao-reflorestamento__intro h2,
+  .secao-reflorestamento__metas h2 {
+    font-size: 26px;
+  }
+
+  .cartao-destaque__texto {
+    padding: 24px;
+  }
+}
