@@ -226,6 +226,24 @@ body {
   gap: 10px;
 }
 
+.secao-descarbonizacao__nav {
+  display: none;
+}
+
+.secao-descarbonizacao__btn {
+  border: none;
+  background: #d9d9d9;
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 24px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
 .secao-descarbonizacao__card {
   display: grid;
   gap: 0;
@@ -428,10 +446,42 @@ body {
   align-items: stretch;
 }
 
-.secao-reflorestamento__card-media img {
+.secao-reflorestamento__card-media {
+  position: relative;
+}
+
+.secao-reflorestamento__imagem-desktop {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.secao-reflorestamento__slider {
+  display: none;
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.secao-reflorestamento__slides {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s ease;
+  gap: 16px;
+}
+
+.secao-reflorestamento__slide {
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.secao-reflorestamento__slide img {
+  width: 100%;
+  height: auto;
   border-radius: 12px;
   display: block;
 }

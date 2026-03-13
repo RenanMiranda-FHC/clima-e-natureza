@@ -327,6 +327,13 @@
     padding-bottom: 4px;
   }
 
+  .secao-descarbonizacao__nav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
   .secao-descarbonizacao__card {
     min-width: 100%;
     scroll-snap-align: start;
@@ -387,6 +394,14 @@
     margin: 24px calc(50% - 50vw) 0;
     width: 100vw;
     border-radius: 0;
+  }
+
+  .secao-reflorestamento__imagem-desktop {
+    display: none;
+  }
+
+  .secao-reflorestamento__slider {
+    display: block;
   }
 
   .secao-cadeia__layout {

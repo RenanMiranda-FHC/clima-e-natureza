@@ -233,6 +233,14 @@
             </div>
           </article>
         </div>
+        <div class="secao-descarbonizacao__nav" aria-label="Navegação de cartões">
+          <button class="secao-descarbonizacao__btn secao-descarbonizacao__btn--prev" type="button" aria-label="Cartão anterior">
+            ‹
+          </button>
+          <button class="secao-descarbonizacao__btn secao-descarbonizacao__btn--next" type="button" aria-label="Próximo cartão">
+            ›
+          </button>
+        </div>
 
       </section>
       <section class="secao-cadeia">
@@ -318,9 +326,26 @@
           <article class="secao-reflorestamento__card-arr">
             <div class="secao-reflorestamento__card-media">
               <img
+                class="secao-reflorestamento__imagem-desktop"
                 src="assets/imagem-9.png"
                 alt="Projeto ARR Corredores de vida"
               />
+              <div class="secao-reflorestamento__slider" aria-label="Galeria de imagens do projeto ARR Corredores de vida">
+                <div class="secao-reflorestamento__slides">
+                  <figure class="secao-reflorestamento__slide">
+                    <img src="assets/imagem-10.jpg" alt="Projeto ARR Corredores de vida" />
+                  </figure>
+                  <figure class="secao-reflorestamento__slide">
+                    <img src="assets/imagem-11.jpg" alt="Projeto ARR Corredores de vida" />
+                  </figure>
+                  <figure class="secao-reflorestamento__slide">
+                    <img src="assets/imagem-12.jpg" alt="Projeto ARR Corredores de vida" />
+                  </figure>
+                  <figure class="secao-reflorestamento__slide">
+                    <img src="assets/imagem-13.jpg" alt="Projeto ARR Corredores de vida" />
+                  </figure>
+                </div>
+              </div>
             </div>
             <div class="secao-reflorestamento__card-texto">
               <h3>ARR Corredores de vida</h3>
@@ -618,6 +643,113 @@
         if (ativo) {
           renderPainel(ativo.dataset.key);
         }
+      }
+
+      const reflorestamentoSlider = document.querySelector(
+        ".secao-reflorestamento__slider"
+      );
+      if (reflorestamentoSlider) {
+        const slides = reflorestamentoSlider.querySelector(
+          ".secao-reflorestamento__slides"
+        );
+        const slideItems = Array.from(
+          reflorestamentoSlider.querySelectorAll(
+            ".secao-reflorestamento__slide"
+          )
+        );
+        let currentIndex = 0;
+        let timerId = null;
+        let startX = 0;
+        let startY = 0;
+        let isDragging = false;
+        let isSwiping = false;
+
+        function goTo(index) {
+          if (!slides || slideItems.length === 0) return;
+          currentIndex = (index + slideItems.length) % slideItems.length;
+          const slideWidth = slideItems[0].getBoundingClientRect().width;
+          const gap =
+            parseFloat(window.getComputedStyle(slides).columnGap) || 0;
+          const offset = (slideWidth + gap) * currentIndex;
+          slides.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function next() {
+          goTo(currentIndex + 1);
+        }
+
+        function prev() {
+          goTo(currentIndex - 1);
+        }
+
+        function startAuto() {
+          stopAuto();
+          timerId = window.setInterval(next, 4500);
+        }
+
+        function stopAuto() {
+          if (timerId) {
+            window.clearInterval(timerId);
+            timerId = null;
+          }
+        }
+
+        reflorestamentoSlider.addEventListener("mouseenter", stopAuto);
+        reflorestamentoSlider.addEventListener("mouseleave", startAuto);
+        reflorestamentoSlider.addEventListener("focusin", stopAuto);
+        reflorestamentoSlider.addEventListener("focusout", startAuto);
+
+        reflorestamentoSlider.addEventListener(
+          "touchstart",
+          (event) => {
+            if (!event.touches || event.touches.length !== 1) return;
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+            isDragging = true;
+            isSwiping = false;
+            stopAuto();
+          },
+          { passive: true }
+        );
+
+        reflorestamentoSlider.addEventListener(
+          "touchmove",
+          (event) => {
+            if (!isDragging || !event.touches || event.touches.length !== 1) return;
+            const deltaX = event.touches[0].clientX - startX;
+            const deltaY = event.touches[0].clientY - startY;
+
+            if (!isSwiping && Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+              isSwiping = true;
+            }
+
+            if (isSwiping) {
+              event.preventDefault();
+              if (Math.abs(deltaX) > 60) {
+                isDragging = false;
+                if (deltaX > 0) {
+                  prev();
+                } else {
+                  next();
+                }
+                startAuto();
+              }
+            }
+          },
+          { passive: false }
+        );
+
+        reflorestamentoSlider.addEventListener("touchend", () => {
+          isDragging = false;
+          isSwiping = false;
+          startAuto();
+        });
+
+        goTo(0);
+        startAuto();
+        window.addEventListener("resize", () => {
+          goTo(currentIndex);
+        });
       }
     </script>
   </body>
