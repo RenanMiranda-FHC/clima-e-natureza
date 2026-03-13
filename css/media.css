@@ -363,6 +363,12 @@
     height: auto;
   }
 
+  .hero h1 {
+    font-size: 40px;
+    max-width: 300px;
+    line-height: 1.05;
+  }
+
   .secao-interconexao,
   .secao-metas,
   .secao-descarbonizacao,
@@ -450,6 +456,12 @@
     height: auto;
   }
 
+  .hero h1 {
+    font-size: 40px;
+    max-width: 220px;
+    line-height: 1.05;
+  }
+
   .secao-interconexao__texto h2,
   .secao-metas__titulo h2,
   .secao-descarbonizacao h2,
@@ -530,6 +542,12 @@
   }
   .hero__image {
     height: auto;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    max-width: 240px;
+    line-height: 1.05;
   }
 
   .secao-reflorestamento__cta {
