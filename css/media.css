@@ -267,3 +267,277 @@
     padding: 24px;
   }
 }
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 28px;
+  }
+
+  .secao-metas__titulo {
+    max-width: none;
+  }
+
+  .secao-metas__titulo h2 {
+    white-space: normal;
+  }
+
+  .secao-metas__titulo .titulo-linha {
+    display: inline;
+  }
+
+  .secao-metas__titulo .titulo-linha + .titulo-linha::before {
+    content: " ";
+  }
+
+  .secao-metas__conteudo {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .secao-metas__cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-meta {
+    padding: 18px 16px 22px;
+    border-radius: 12px;
+    grid-template-rows: auto;
+    font-size: 15px;
+  }
+
+  .card-meta__imagem {
+    width: 72%;
+    height: 150px;
+  }
+
+  .card-meta p {
+    text-align: left;
+  }
+
+  .secao-descarbonizacao__cards {
+    grid-template-columns: none;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .secao-descarbonizacao__card {
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .secao-descarbonizacao__nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .secao-descarbonizacao__btn {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 10px;
+    background: #d9d9d9;
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .cartao-destaque__imagem {
+    order: -1;
+  }
+
+  .cartao-destaque__texto {
+    order: 1;
+  }
+
+  .hero__image {
+    height: auto;
+  }
+
+  .secao-interconexao,
+  .secao-metas,
+  .secao-descarbonizacao,
+  .secao-cadeia,
+  .secao-reflorestamento,
+  .secao-referencias {
+    padding: 48px 0;
+  }
+
+  .secao-interconexao__texto h2,
+  .secao-metas__titulo h2,
+  .secao-descarbonizacao h2,
+  .secao-cadeia h2 {
+    font-size: 28px;
+  }
+
+  .secao-reflorestamento__intro h2,
+  .secao-reflorestamento__metas h2 {
+    font-size: 28px;
+  }
+
+  .secao-reflorestamento__intro h3 {
+    font-size: 22px;
+  }
+
+  .secao-reflorestamento__cta {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .secao-reflorestamento__card-arr {
+    margin: 24px calc(50% - 50vw) 0;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-padding: 20px;
+  }
+
+  .secao-metas__titulo {
+    max-width: none;
+  }
+
+  .secao-metas__titulo h2 {
+    white-space: normal;
+  }
+
+  .secao-metas__titulo .titulo-linha {
+    display: inline;
+  }
+
+  .secao-metas__titulo .titulo-linha + .titulo-linha::before {
+    content: " ";
+  }
+
+  .secao-metas__conteudo {
+    gap: 20px;
+  }
+
+  .secao-metas__cards {
+    gap: 16px;
+  }
+
+  .card-meta {
+    padding: 16px 14px 20px;
+    font-size: 14px;
+  }
+
+  .card-meta__imagem {
+    width: 70%;
+    height: 140px;
+  }
+
+  .secao-descarbonizacao__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+  .hero__image {
+    height: auto;
+  }
+
+  .secao-interconexao__texto h2,
+  .secao-metas__titulo h2,
+  .secao-descarbonizacao h2,
+  .secao-cadeia h2 {
+    font-size: 24px;
+  }
+
+  .secao-reflorestamento__intro h2,
+  .secao-reflorestamento__metas h2 {
+    font-size: 28px;
+  }
+
+  .secao-reflorestamento__intro h3 {
+    font-size: 22px;
+  }
+
+  .secao-reflorestamento__cta {
+    font-size: 14px;
+    padding: 10px 14px;
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .secao-reflorestamento__card-arr {
+    margin: 20px calc(50% - 50vw) 0;
+  }
+}
+
+@media (max-width: 393px) {
+  :root {
+    --page-padding: 16px;
+  }
+
+  .secao-metas__titulo {
+    max-width: none;
+  }
+
+  .secao-metas__titulo h2 {
+    white-space: normal;
+  }
+
+  .secao-metas__titulo .titulo-linha {
+    display: inline;
+  }
+
+  .secao-metas__titulo .titulo-linha + .titulo-linha::before {
+    content: " ";
+  }
+
+  .secao-reflorestamento__intro h2,
+  .secao-reflorestamento__metas h2 {
+    font-size: 28px;
+  }
+
+  .secao-reflorestamento__intro h3 {
+    font-size: 22px;
+  }
+
+  .secao-metas__cards {
+    gap: 14px;
+  }
+
+  .card-meta {
+    padding: 14px 12px 18px;
+    font-size: 13.5px;
+  }
+
+  .card-meta__imagem {
+    width: 68%;
+    height: 130px;
+  }
+
+  .secao-descarbonizacao__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .hero__image {
+    height: auto;
+  }
+
+  .secao-reflorestamento__cta {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .secao-reflorestamento__card-arr {
+    margin: 18px calc(50% - 50vw) 0;
+  }
+}

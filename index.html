@@ -19,11 +19,14 @@
   <body>
     <main class="page">
       <section class="hero">
-        <img
-          class="hero__image"
-          src="assets/header.jpg"
-          alt="Fileira de turbinas eólicas sobre o mar"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/header-mobile.jpg" />
+          <img
+            class="hero__image"
+            src="assets/header.jpg"
+            alt="Fileira de turbinas eólicas sobre o mar"
+          />
+        </picture>
         <div class="hero__content">
           <div class="hero__inner">
             <h1>
@@ -67,11 +70,17 @@
                 se tornarem mais sustentáveis, equitativos e resilientes.
               </p>
             </div>
-            <img
-              class="cartao-destaque__imagem"
-              src="assets/imagem-1.jpg"
-              alt="Pessoa abraçando uma criança ao ar livre"
-            />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="assets/imagem-1-mobile.jpg"
+              />
+              <img
+                class="cartao-destaque__imagem"
+                src="assets/imagem-1.jpg"
+                alt="Pessoa abraçando uma criança ao ar livre"
+              />
+            </picture>
           </div>
         </div>
 
@@ -223,6 +232,23 @@
               </p>
             </div>
           </article>
+        </div>
+
+        <div class="secao-descarbonizacao__nav" aria-hidden="true">
+          <button
+            class="secao-descarbonizacao__btn secao-descarbonizacao__btn--prev"
+            type="button"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <button
+            class="secao-descarbonizacao__btn secao-descarbonizacao__btn--next"
+            type="button"
+            aria-label="Próximo"
+          >
+            ›
+          </button>
         </div>
       </section>
       <section class="secao-cadeia">
@@ -508,6 +534,17 @@
       const secaoCadeia = document.querySelector(".secao-cadeia");
       const itens = secaoCadeia.querySelectorAll(".secao-cadeia__item");
       const painel = secaoCadeia.querySelector(".secao-cadeia__painel");
+      const secaoDescarbonizacao = document.querySelector(
+        ".secao-descarbonizacao"
+      );
+      const descarbonizacaoCards =
+        secaoDescarbonizacao.querySelector(".secao-descarbonizacao__cards");
+      const btnPrev = secaoDescarbonizacao.querySelector(
+        ".secao-descarbonizacao__btn--prev"
+      );
+      const btnNext = secaoDescarbonizacao.querySelector(
+        ".secao-descarbonizacao__btn--next"
+      );
 
       function renderPainel(key) {
         const conteudo = secaoCadeiaConteudos[key];
@@ -562,6 +599,24 @@
 
           renderPainel(key);
         });
+      });
+
+      function scrollDescarbonizacao(direction) {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        if (!isMobile) return;
+        const width = descarbonizacaoCards.clientWidth;
+        descarbonizacaoCards.scrollBy({
+          left: direction * width,
+          behavior: "smooth"
+        });
+      }
+
+      btnPrev.addEventListener("click", () => {
+        scrollDescarbonizacao(-1);
+      });
+
+      btnNext.addEventListener("click", () => {
+        scrollDescarbonizacao(1);
       });
     </script>
   </body>
