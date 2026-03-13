@@ -486,9 +486,9 @@
         },
         "engajamento-fornecedores": {
           textos: [
-            "Estamos nos envolvendo com nossos fornecedores, incentivando-os a adotar metas científicas validadas (𝘚𝘉𝘛𝘴 – 𝘚𝘤𝘪𝘦𝘯𝘤𝘦-𝘉𝘢𝘴𝘦𝘥 𝘛𝘢𝘳𝘨𝘦𝘵𝘴) por meio de cláusulas contratuais. As metas climáticas baseadas na ciência de nossos fornecedores apoiam nosso objetivo de descarbonização de reduzir as emissões pela metade até o final de 2030.",
+            "Estamos nos envolvendo com nossos fornecedores, incentivando-os a adotar metas científicas validadas (<em>SBTs – Science-Based Targets</em>) por meio de cláusulas contratuais. As metas climáticas baseadas na ciência de nossos fornecedores apoiam nosso objetivo de descarbonização de reduzir as emissões pela metade até o final de 2030.",
             "Somos membros fundadores da Energize, uma iniciativa para ampliar o acesso à energia renovável para fornecedores farmacêuticos. Além disso, fazemos parte do programa Activate, que tem como objetivo descarbonizar as cadeias de suprimento de ingredientes farmacêuticos ativos (APIs).",
-            "Por meio da 𝘚𝘶𝘴𝘵𝘢𝘪𝘯𝘢𝘣𝘭𝘦 𝘔𝘢𝘳𝘬𝘦𝘵𝘴 𝘐𝘯𝘪𝘵𝘪𝘢𝘵𝘪𝘷𝘦 (SMI) – 𝘏𝘦𝘢𝘭𝘵𝘩 𝘚𝘺𝘴𝘵𝘦𝘮𝘴 𝘛𝘢𝘴𝘬 𝘍𝘰𝘳𝘤𝘦, estamos apoiando fornecedores na descarbonização. Ao identificar pontos críticos de emissões junto a parceiros do setor, estamos apoiando a descarbonização em escala sistêmica."
+            "Por meio da <em>Sustainable Markets Initiative</em> (SMI) – <em>Health Systems Task Force</em>, estamos apoiando fornecedores na descarbonização. Ao identificar pontos críticos de emissões junto a parceiros do setor, estamos apoiando a descarbonização em escala sistêmica."
           ],
           imagem: {
             src: "assets/imagem-6.jpg",
@@ -532,19 +532,24 @@
       };
 
       const secaoCadeia = document.querySelector(".secao-cadeia");
-      const itens = secaoCadeia.querySelectorAll(".secao-cadeia__item");
-      const painel = secaoCadeia.querySelector(".secao-cadeia__painel");
+      const itens = secaoCadeia
+        ? secaoCadeia.querySelectorAll(".secao-cadeia__item")
+        : [];
+      const painel = secaoCadeia
+        ? secaoCadeia.querySelector(".secao-cadeia__painel")
+        : null;
       const secaoDescarbonizacao = document.querySelector(
         ".secao-descarbonizacao"
       );
-      const descarbonizacaoCards =
-        secaoDescarbonizacao.querySelector(".secao-descarbonizacao__cards");
-      const btnPrev = secaoDescarbonizacao.querySelector(
-        ".secao-descarbonizacao__btn--prev"
-      );
-      const btnNext = secaoDescarbonizacao.querySelector(
-        ".secao-descarbonizacao__btn--next"
-      );
+      const descarbonizacaoCards = secaoDescarbonizacao
+        ? secaoDescarbonizacao.querySelector(".secao-descarbonizacao__cards")
+        : null;
+      const btnPrev = secaoDescarbonizacao
+        ? secaoDescarbonizacao.querySelector(".secao-descarbonizacao__btn--prev")
+        : null;
+      const btnNext = secaoDescarbonizacao
+        ? secaoDescarbonizacao.querySelector(".secao-descarbonizacao__btn--next")
+        : null;
 
       function renderPainel(key) {
         const conteudo = secaoCadeiaConteudos[key];
@@ -554,7 +559,7 @@
 
         conteudo.textos.forEach((texto) => {
           const p = document.createElement("p");
-          p.textContent = texto;
+          p.innerHTML = texto;
           painel.appendChild(p);
         });
 
@@ -602,6 +607,7 @@
       });
 
       function scrollDescarbonizacao(direction) {
+        if (!descarbonizacaoCards) return;
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
         if (!isMobile) return;
         const width = descarbonizacaoCards.clientWidth;
@@ -611,13 +617,24 @@
         });
       }
 
-      btnPrev.addEventListener("click", () => {
-        scrollDescarbonizacao(-1);
-      });
+      if (btnPrev && btnNext) {
+        btnPrev.addEventListener("click", () => {
+          scrollDescarbonizacao(-1);
+        });
 
-      btnNext.addEventListener("click", () => {
-        scrollDescarbonizacao(1);
-      });
+        btnNext.addEventListener("click", () => {
+          scrollDescarbonizacao(1);
+        });
+      }
+
+      if (secaoCadeia) {
+        const ativo = secaoCadeia.querySelector(
+          ".secao-cadeia__item.is-active"
+        );
+        if (ativo) {
+          renderPainel(ativo.dataset.key);
+        }
+      }
     </script>
   </body>
 </html>
