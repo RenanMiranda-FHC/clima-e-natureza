@@ -577,6 +577,14 @@ body {
   }
 }
 
+@media (min-width: 951px) and (max-width: 1047px) {
+  .secao-descarbonizacao__cards .secao-descarbonizacao__conteudo h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    min-height: 58px;
+  }
+}
+
 @media (max-width: 1439px) {
   .secao-reflorestamento__cards {
     grid-template-columns: 0.85fr 0.85fr 1.2fr;
