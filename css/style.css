@@ -74,7 +74,7 @@ body {
 
 .secao-interconexao__texto h2 {
   font-family: "lexia", serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 40px;
   line-height: 1.1;
   color: var(--cor-titulo);
@@ -510,6 +510,11 @@ body {
   margin: 0 auto;
 }
 
+.meta-card--square .meta-card__imagem {
+  height: 125px;
+  margin-top: 26px;
+}
+
 
 .meta-card p {
   font-size: 18px;
@@ -555,10 +560,73 @@ body {
   aspect-ratio: 1 / 1;
   align-content: start;
   text-align: left;
+  justify-content: flex-start;
 }
 
 .meta-card--square p {
   margin-top: 6px;
+}
+
+@media (min-width: 951px) and (max-width: 1381px) {
+  .meta-card--100.meta-card--square {
+    aspect-ratio: auto;
+  }
+
+  .meta-card--100 .meta-card__imagem {
+    height: 120px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .secao-reflorestamento__cards {
+    grid-template-columns: 0.85fr 0.85fr 1.2fr;
+    gap: 8px;
+  }
+
+  .meta-card {
+    padding: 14px;
+    gap: 8px;
+    min-height: 120px;
+  }
+
+  .meta-card--square {
+    aspect-ratio: auto;
+  }
+
+  .meta-card__imagem {
+    width: 78%;
+    height: 105px;
+  }
+
+  .meta-card__numero {
+    font-size: 30px;
+  }
+
+  .meta-card__subtitulo {
+    font-size: 26px;
+  }
+
+  .meta-card p {
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 14px 16px 0;
+  }
+
+  .meta-card--200 .meta-card__numero {
+    font-size: 50px;
+  }
+
+  .meta-card--200 .meta-card__subtitulo {
+    font-size: 26px;
+  }
+
+  .meta-card--12 .meta-card__numero {
+    font-size: 66px;
+  }
+
+  .meta-card--left {
+    justify-self: stretch;
+  }
 }
 .meta-card--left {
   justify-self: start;
@@ -586,6 +654,11 @@ body {
 .meta-card--200 .meta-card__subtitulo {
   color: #ffffff;
 }
+
+.meta-card--95 .meta-card__imagem {
+  object-position: center top;
+}
+
 
 .secao-reflorestamento__cta {
   margin: 20px auto 0;
